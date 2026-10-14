@@ -1,0 +1,29 @@
+name: "REDWOOD"
+run-name: "Breeze"
+"on":
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+jobs:
+  Sierra:
+    permissions:
+      pages: write
+      contents: read
+      id-token: write
+    runs-on: ubuntu-22.04
+    environment:
+      name: "github-pages"
+      url: ${{ steps.Silver.outputs.page_url }}
+    steps:
+      - name: "Mosaic"
+        uses: actions/checkout@v7
+      - name: "dune"
+        uses: actions/configure-pages@v5
+      - name: "summit"
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./
+      - name: "GEYSER"
+        id: Silver
+        uses: actions/deploy-pages@v4
